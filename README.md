@@ -1,2 +1,2 @@
-# Preisfindung_Aktie_Auktionsphase_2
-Zweiversuch mit InMemorySpeicher nicht mit MongoDB
+# vertx_exercise_web
+web-framework vert.x

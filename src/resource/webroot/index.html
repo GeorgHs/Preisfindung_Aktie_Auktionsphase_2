@@ -1,0 +1,60 @@
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<div id="app">
+	<h1>Books</h1>
+	<ul>
+		<li v-for="book in books">{{book.isbn}} - {{book.title}}
+		<a href="#" @click="deleteBook(book.isbn)">X</a>
+		</li>
+	</ul>
+
+	<h4>Add Book</h4>
+	<input id="isbn" type="text" placeholder="ISBN als Nummer" value="" v-model="isbn" />
+	<input id="title" type="text" placeholder="title als String" value="" v-model="title" />
+	<a href="#" @click="saveBook">Save</a>
+	<p>{{message}}</p>
+</div>
+
+<script lang="vue">
+var app = new Vue({
+		el:'#app',
+		data: {
+			books: null,
+			isbn: '',
+			title: ''
+		},
+		mounted () {
+			this.fetchBooks()
+		},
+		methods: {
+			fetchBooks: function() {
+				axios.get('/books')
+					.then(response => (this.books = response.data))
+			},
+			saveBook: function() {
+				this.ajaxReqest = true;
+				axios.post('/books', {
+					isbn: this.isbn,
+					title: this.title
+				})
+				.then(function (response) {
+					console.log(response);
+					app.fetchBooks();
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+			},
+			deleteBook: function(id) {
+				axios.delete('/books/' + id)
+				.then(function(response) {
+					console.log(response);
+					app.fetchBooks();
+				})
+				.catch(function (error) {
+					console.log(error);
+				})
+			},
+		}
+	})
+</script>
