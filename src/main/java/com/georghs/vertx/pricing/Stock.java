@@ -6,7 +6,6 @@ public class Stock {
 	private Currency cur;
 	public Stock() {
 		//default constructor
-
 	}
 
 	/**

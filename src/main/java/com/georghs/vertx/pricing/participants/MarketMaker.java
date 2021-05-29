@@ -2,26 +2,33 @@ package com.georghs.vertx.pricing.participants;
 
 public class MarketMaker extends MarketParticipant {
 
-	private String nameOfBank;
 	private String bankCode;
 
-	public MarketMaker(int id, String name) {
+	/**
+	The MarketMaker, usually a financial institution is payed to provide the market with liquidity
+	@param id
+	@param name What is the official name fo the financial institution, for example: Bank of America Corporation
+	@param bankCode bankCode der Bank
+	*/
+	public MarketMaker(int id, String name,  String bankCode) {
 		super(id, name);
 		// TODO Auto-generated constructor stub
+		this.bankCode = bankCode;
 	}
 
-	public String getNameOfBank() {
-		return nameOfBank;
-	}
 
-	public void setNameOfBank(String nameOfBank) {
-		this.nameOfBank = nameOfBank;
-	}
-
+	/**
+	Market Maker's bank code
+	@return bankCode
+	*/
 	public String getBankCode() {
 		return bankCode;
 	}
 
+	/**
+	Market Maker sets bankCode
+	@param bankCode
+	*/
 	public void setBankCode(String bankCode) {
 		this.bankCode = bankCode;
 	}

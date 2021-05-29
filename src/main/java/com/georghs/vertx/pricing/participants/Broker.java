@@ -16,9 +16,9 @@ public class Broker extends MarketParticipant {
 
 	/**
 	Broker is Market-Participant who is selling and buying stocks for himself on a proprietary basis or on a commission basis
-	@param the parameters used by the method
-
-	@return the value returned by the method
+	@param id
+	@param name
+	@param commission_basis the parameters used by the method
 	*/
 	public Broker(int id, String name, boolean commission_basis) {
 		super(id, name);
