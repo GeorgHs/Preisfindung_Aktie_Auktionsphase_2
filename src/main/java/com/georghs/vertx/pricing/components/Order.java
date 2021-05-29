@@ -7,14 +7,17 @@ import com.georghs.vertx.pricing.participants.AbstractMarketParticipant;
  */
 public class Order {
 	private Stock stock;
-	private AbstractMarketParticipant marketparticipant;
-	private int amount;
+	private int volume_in_amount;
+	private int price;
+	private OrderType ordertype;
 
-	public Order(Stock stock, AbstractMarketParticipant marketparticipant, int amount) {
+
+	public Order(Stock stock, int volume_in_amount, int price, OrderType ordertype) {
 		super();
 		this.stock = stock;
-		this.marketparticipant = marketparticipant;
-		this.amount = amount;
+		this.volume_in_amount = volume_in_amount;
+		this.price = price;
+		this.ordertype = ordertype;
 	}
 	public Stock getStock() {
 		return stock;
@@ -22,20 +25,24 @@ public class Order {
 	public void setStock(Stock stock) {
 		this.stock = stock;
 	}
-	public AbstractMarketParticipant getMarketparticipant() {
-		return marketparticipant;
+	public int getVolume_in_amount() {
+		return volume_in_amount;
 	}
-	public void setMarketparticipant(AbstractMarketParticipant marketparticipant) {
-		this.marketparticipant = marketparticipant;
+	public void setVolume_in_amount(int volume_in_amount) {
+		this.volume_in_amount = volume_in_amount;
 	}
-	public int getAmount() {
-		return amount;
+	public int getPrice() {
+		return price;
 	}
-	public void setAmount(int amount) {
-		this.amount = amount;
+	public void setPrice(int price) {
+		this.price = price;
 	}
-
-
+	public OrderType getOrdertype() {
+		return ordertype;
+	}
+	public void setOrdertype(OrderType ordertype) {
+		this.ordertype = ordertype;
+	}
 
 
 }

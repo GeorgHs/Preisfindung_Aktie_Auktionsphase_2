@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.georghs.vertx.pricing.components.Stock;
 import com.georghs.vertx.pricing.participants.Broker;
+import com.georghs.vertx.pricing.participants.MarketMaker;
 import com.georghs.vertx.pricing.participants.AbstractMarketParticipant;
 
 import io.vertx.core.json.JsonArray;
@@ -14,7 +15,7 @@ public class InMemoryMarketparticipantStore {
 	private Map<Long, AbstractMarketParticipant> marketparticipants = new HashMap<>();
 
 	InMemoryMarketparticipantStore () {
-		marketparticipants.put(1L, new Broker(1, "Counterpart1"));
+		marketparticipants.put(1L, new MarketMaker(1, "Counterpart1"));
 		marketparticipants.put(2L, new AbstractMarketParticipant(2, "Counterpart2"));
 		marketparticipants.put(3L, new AbstractMarketParticipant(3, "Counterpart3"));
 		marketparticipants.put(4L, new AbstractMarketParticipant(4, "Counterpart4"));
