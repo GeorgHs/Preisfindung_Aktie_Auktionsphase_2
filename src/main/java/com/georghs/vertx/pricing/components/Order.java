@@ -1,5 +1,6 @@
 package com.georghs.vertx.pricing.components;
 
+import com.georghs.vertx.pricing.customer.Customer;
 import com.georghs.vertx.pricing.participants.AbstractMarketParticipant;
 
 /**
@@ -10,14 +11,16 @@ public class Order {
 	private int volume_in_amount;
 	private int price;
 	private OrderType ordertype;
+	private Customer customer;
 
 
-	public Order(Stock stock, int volume_in_amount, int price, OrderType ordertype) {
+	public Order(Stock stock, int volume_in_amount, int price, OrderType ordertype, Customer customer) {
 		super();
 		this.stock = stock;
 		this.volume_in_amount = volume_in_amount;
 		this.price = price;
 		this.ordertype = ordertype;
+		this.customer = customer;
 	}
 	public Stock getStock() {
 		return stock;
@@ -43,6 +46,11 @@ public class Order {
 	public void setOrdertype(OrderType ordertype) {
 		this.ordertype = ordertype;
 	}
-
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 
 }

@@ -3,11 +3,17 @@ package com.georghs.vertx.pricing.participants;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.georghs.vertx.pricing.components.Currency;
+import com.georghs.vertx.pricing.components.Order;
+import com.georghs.vertx.pricing.components.OrderType;
+import com.georghs.vertx.pricing.components.Stock;
+import com.georghs.vertx.pricing.customer.Customer;
+import com.georghs.vertx.pricing.customer.CustomerType;
+
 public class Broker extends AbstractMarketParticipant {
 	private boolean commission_basis;
-	private HashMap<String, Double> customer_id_spread = new HashMap<String, Double>() {{
-		put("A1", 0.25);
-		put("B1", 0.01);
+	private ArrayList<Order> customer_with_order = new ArrayList<>() {{
+		add(new Order(new Stock("sdfsdf", "sdfsfdf", Currency.AUD), 250, 25, OrderType.BUY_LIMIT, new Customer(CustomerType.Retail_Client,"Lisa")));
 	}};
 
 
@@ -15,16 +21,17 @@ public class Broker extends AbstractMarketParticipant {
 	// 2. WIE KANN ICH FOLGENDES MACHEN: WENN ON COMMISSION BASIS ÖFFNET ER DIE KUNDEN-HASHMAP; Prop-Trading: er kann die Hashmap nicht bedienen
 
 	/**
-	Broker is Market-Participant who is selling and buying stocks for himself on a proprietary basis or on a commission basis
-	@param id
-	@param name
-	@param commission_basis the parameters used by the method
+	* Broker is Market-Participant who is selling and buying stocks for himself on a proprietary basis or on a commission basis
+	* Broker holds Orders!
+	* @param id
+	* @param name
+	* @param commission_basis the parameters used by the method
 	*/
-	public Broker(int id, String name, boolean commission_basis, HashMap<String, Double> customer_id_spread) {
+	public Broker(int id, String name, boolean commission_basis, ArrayList<Order> customer_with_order) {
 		super(id, name);
 		this.commission_basis = commission_basis;
 		if (isCommission_basis() == false) {
-			this.customer_id_spread = null;
+			this.customer_with_order = null;
 		}
 
 	}
@@ -45,24 +52,24 @@ public class Broker extends AbstractMarketParticipant {
 		this.commission_basis = commission_basis;
 	}
 
+
 	/**
-	All Customers of this particular broker are listed here with their IDs
-	@return the value returned by the method
+	* all Orders of this Broker are listed, market-participant (customer) included in instance of order-class
+	* @return returns orders of this particular broker
 	*/
-	public HashMap<String, Double> getCustomer_id_spread() {
-		return customer_id_spread;
+	public ArrayList<Order> getCustomer_with_order() {
+		return customer_with_order;
 	}
 
 	/**
-	All Customers
-	@param Set all customers
+	* all Orders of this Broker are listed, market-participant (customer) included in instance of order-class
+	* @param returns orders of this particular broker
 	*/
-	public void setCustomer_id_spread(HashMap<String, Double> customer_id_spread) {
-		if (isCommission_basis() == true ) {
-			this.customer_id_spread = customer_id_spread;
-		} else {
-			this.customer_id_spread = null;
-		}
+	public void setCustomer_with_order(ArrayList<Order> customer_with_order) {
+		this.customer_with_order = customer_with_order;
 	}
+
+
+
 
 }
