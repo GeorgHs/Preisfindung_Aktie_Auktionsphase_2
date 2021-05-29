@@ -11,10 +11,10 @@ import com.georghs.vertx.pricing.participants.AbstractMarketParticipant;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
-public class InMemoryMarketparticipantStore {
+public class InMemoryMarketparticipantStore2 {
 	private Map<Long, AbstractMarketParticipant> marketparticipants = new HashMap<>();
 
-	InMemoryMarketparticipantStore () {
+	InMemoryMarketparticipantStore2 () {
 		marketparticipants.put(1L, new MarketMaker(1, "Counterpart1"));
 		marketparticipants.put(2L, new AbstractMarketParticipant(2, "Counterpart2"));
 		marketparticipants.put(3L, new AbstractMarketParticipant(3, "Counterpart3"));

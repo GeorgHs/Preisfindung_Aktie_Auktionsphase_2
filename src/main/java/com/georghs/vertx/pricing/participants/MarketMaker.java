@@ -1,5 +1,9 @@
 package com.georghs.vertx.pricing.participants;
 
+import java.util.ArrayList;
+
+import com.georghs.vertx.pricing.components.Order;
+
 public class MarketMaker extends AbstractMarketParticipant {
 
 	private String bankCode;
@@ -10,8 +14,8 @@ public class MarketMaker extends AbstractMarketParticipant {
 	@param name What is the official name fo the financial institution, for example: Bank of America Corporation
 	@param bankCode bankCode der Bank
 	*/
-	public MarketMaker(int id, String name,  String bankCode) {
-		super(id, name);
+	public MarketMaker(int id, String name,  String bankCode, ArrayList<Order> orders) {
+		super(id, name, orders);
 		// TODO Auto-generated constructor stub
 		this.bankCode = bankCode;
 	}

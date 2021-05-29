@@ -1,4 +1,4 @@
-package com.georghs.vertx.pricing.computations;
+package com.georghs.vertx.pricing.components;
 
 import java.time.LocalDateTime;
 

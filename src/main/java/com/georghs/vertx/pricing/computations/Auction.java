@@ -3,6 +3,7 @@ package com.georghs.vertx.pricing.computations;
 import java.util.ArrayList;
 
 import com.georghs.vertx.pricing.components.ExecutedOrderItem;
+import com.georghs.vertx.pricing.components.ExecutionPrice;
 import com.georghs.vertx.pricing.components.Order;
 
 public class Auction extends IAuction {

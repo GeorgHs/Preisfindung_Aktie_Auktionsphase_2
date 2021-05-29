@@ -12,9 +12,9 @@ import com.georghs.vertx.pricing.customer.CustomerType;
 
 public class Broker extends AbstractMarketParticipant {
 	private boolean commission_basis;
-	private ArrayList<Order> customer_with_order = new ArrayList<>() {{
-		add(new Order(new Stock("sdfsdf", "sdfsfdf", Currency.AUD), 250, 25, OrderType.BUY_LIMIT, new Customer(CustomerType.Retail_Client,"Lisa")));
-	}};
+//	private ArrayList<Order> customer_with_order = new ArrayList<>() {{
+//		add(new Order(new Stock("sdfsdf", "sdfsfdf", Currency.AUD), 250, 25, OrderType.BUY_LIMIT, new Customer(CustomerType.Retail_Client,"Lisa")));
+//	}};
 
 
 	// 1. WIE KANN ICH HASHMAP MIT KUNDEN INITIALISIEREN
@@ -27,12 +27,10 @@ public class Broker extends AbstractMarketParticipant {
 	* @param name
 	* @param commission_basis the parameters used by the method
 	*/
-	public Broker(int id, String name, boolean commission_basis, ArrayList<Order> customer_with_order) {
-		super(id, name);
+	public Broker(int id, String name, boolean commission_basis, ArrayList<Order> orders) {
+		super(id, name, orders);
 		this.commission_basis = commission_basis;
-		if (isCommission_basis() == false) {
-			this.customer_with_order = null;
-		}
+
 
 	}
 
@@ -50,23 +48,6 @@ public class Broker extends AbstractMarketParticipant {
 	*/
 	public void setCommission_basis(boolean commission_basis) {
 		this.commission_basis = commission_basis;
-	}
-
-
-	/**
-	* all Orders of this Broker are listed, market-participant (customer) included in instance of order-class
-	* @return returns orders of this particular broker
-	*/
-	public ArrayList<Order> getCustomer_with_order() {
-		return customer_with_order;
-	}
-
-	/**
-	* all Orders of this Broker are listed, market-participant (customer) included in instance of order-class
-	* @param returns orders of this particular broker
-	*/
-	public void setCustomer_with_order(ArrayList<Order> customer_with_order) {
-		this.customer_with_order = customer_with_order;
 	}
 
 
