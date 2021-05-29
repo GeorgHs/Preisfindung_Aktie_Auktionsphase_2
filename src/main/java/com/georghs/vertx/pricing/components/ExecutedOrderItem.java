@@ -1,5 +1,9 @@
 package com.georghs.vertx.pricing.components;
 
-public class ExecutedOrderItem {
+import com.georghs.vertx.pricing.computations.ExecutionPrice;
 
+public class ExecutedOrderItem {
+	private Order previousOrder;
+	private ExecutionPrice executionPrice;
+	
 }

@@ -3,15 +3,50 @@ package com.georghs.vertx.pricing.computations;
 import java.util.ArrayList;
 
 import com.georghs.vertx.pricing.components.ExecutedOrderItem;
+import com.georghs.vertx.pricing.components.Order;
 
-public class Auction {
+public class Auction extends IAuction {
 	private ArrayList<ExecutedOrderItem> executedOrderItems = new ArrayList<>();
-	private AllIncomingOrders<>
+	private ArrayList<Order> allOrdersInPipe;
+	private ExecutionPrice the_price;
 
 
-	public Double returnAveragePrice() {
-		return null;
+
+
+
+	public Auction(ArrayList<ExecutedOrderItem> executedOrderItems, ArrayList<Order> allOrdersInPipe,
+			ExecutionPrice the_price) {
+		super();
+		this.executedOrderItems = executedOrderItems;
+		this.allOrdersInPipe = allOrdersInPipe;
+		this.the_price = the_price;
 	}
+
+	public ArrayList<ExecutedOrderItem> getExecutedOrderItems() {
+		return executedOrderItems;
+	}
+
+	public void setExecutedOrderItems(ArrayList<ExecutedOrderItem> executedOrderItems) {
+		this.executedOrderItems = executedOrderItems;
+	}
+
+	public ArrayList<Order> getAllOrdersInPipe() {
+		return allOrdersInPipe;
+	}
+
+	public void setAllOrdersInPipe(ArrayList<Order> allOrdersInPipe) {
+		this.allOrdersInPipe = allOrdersInPipe;
+	}
+
+	public ExecutionPrice getThe_price() {
+		return the_price;
+	}
+
+	public void setThe_price(ExecutionPrice the_price) {
+		this.the_price = the_price;
+	}
+
+
 
 
 }
