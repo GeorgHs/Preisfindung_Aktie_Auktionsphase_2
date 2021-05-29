@@ -1,4 +1,4 @@
-package com.georghs.vertx_exercise.books;
+package com.georghs.vertx.pricing;
 
 import io.vertx.core.Vertx;
 import io.vertx.junit5.VertxExtension;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import com.georghs.vertx_exercise.books.MainVerticle;
+import com.georghs.vertx.pricing.MainVerticle;
 
 @ExtendWith(VertxExtension.class)
 public class TestMainVerticle {

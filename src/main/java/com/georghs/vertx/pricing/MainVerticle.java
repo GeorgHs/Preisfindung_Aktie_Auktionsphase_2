@@ -1,4 +1,4 @@
-package com.georghs.vertx_exercise.books;
+package com.georghs.vertx.pricing;
 
 
 import io.netty.handler.codec.http.HttpHeaderValues;
@@ -55,7 +55,7 @@ public class MainVerticle extends AbstractVerticle {
 	private void deleteBook(Router books) {
 		books.delete("/books/:isbn").handler(req -> {
 			  final String isbn = req.pathParam("isbn");
-			  final Book deletedBook = store.delete(isbn);
+			  final Stock deletedBook = store.delete(isbn);
 			  if (null == deletedBook) {
 				  //Book not found
 				  req.response().putHeader(HttpHeaders.CONTENT_TYPE, HttpHeaderValues.APPLICATION_JSON)
@@ -99,7 +99,7 @@ public class MainVerticle extends AbstractVerticle {
 		books.put("/books/:isbn").handler(req -> {
 			  final String isbn = req.pathParam("isbn");
 			  final JsonObject requestBody = req.getBodyAsJson();
-			  final Book updatedBook = store.update(isbn, requestBody.mapTo(Book.class));
+			  final Stock updatedBook = store.update(isbn, requestBody.mapTo(Stock.class));
 			  // Return response
 			  req.response()
 			  	.putHeader(HttpHeaders.CONTENT_TYPE, HttpHeaderValues.APPLICATION_JSON)
@@ -112,7 +112,7 @@ public class MainVerticle extends AbstractVerticle {
 			  final JsonObject requestBody = req.getBodyAsJson();
 			  System.out.println("Request Body: " + requestBody);
 			  //Store
-			  store.add(requestBody.mapTo(Book.class));
+			  store.add(requestBody.mapTo(Stock.class));
 			  // Return response
 			  req.response()
 			  	.putHeader(HttpHeaders.CONTENT_TYPE, HttpHeaderValues.APPLICATION_JSON)
