@@ -1,6 +1,6 @@
 package com.georghs.vertx.pricing.participants;
 
-public class MarketMaker extends MarketParticipant {
+public class MarketMaker extends AbstractMarketParticipant {
 
 	private String bankCode;
 

@@ -1,16 +1,16 @@
 package com.georghs.vertx.pricing.components;
 
-import com.georghs.vertx.pricing.participants.MarketParticipant;
+import com.georghs.vertx.pricing.participants.AbstractMarketParticipant;
 
 /**
  * Eingehende Order die im Buch aufgenommen wird
  */
 public class Order {
 	private Stock stock;
-	private MarketParticipant marketparticipant;
+	private AbstractMarketParticipant marketparticipant;
 	private int amount;
 
-	public Order(Stock stock, MarketParticipant marketparticipant, int amount) {
+	public Order(Stock stock, AbstractMarketParticipant marketparticipant, int amount) {
 		super();
 		this.stock = stock;
 		this.marketparticipant = marketparticipant;
@@ -22,10 +22,10 @@ public class Order {
 	public void setStock(Stock stock) {
 		this.stock = stock;
 	}
-	public MarketParticipant getMarketparticipant() {
+	public AbstractMarketParticipant getMarketparticipant() {
 		return marketparticipant;
 	}
-	public void setMarketparticipant(MarketParticipant marketparticipant) {
+	public void setMarketparticipant(AbstractMarketParticipant marketparticipant) {
 		this.marketparticipant = marketparticipant;
 	}
 	public int getAmount() {

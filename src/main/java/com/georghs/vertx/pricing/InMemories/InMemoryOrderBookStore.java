@@ -1,8 +1,9 @@
-package com.georghs.vertx.pricing;
+package com.georghs.vertx.pricing.InMemories;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import com.georghs.vertx.pricing.components.Currency;
 import com.georghs.vertx.pricing.components.Order;
 import com.georghs.vertx.pricing.components.Stock;
 
@@ -13,11 +14,14 @@ public class InMemoryOrderBookStore {
 	private double lastPrice;
 	private Map<Long, Order> orderbooks = new HashMap<>();
 
+	// Create newStock(), wie macht man das?
 
 	InMemoryOrderBookStore() {
 
 
-		Stock stock = new Stock();
+		Stock stock = new Stock("sdfs","name1", Currency.AUD);
+		stock.setCur(Currency.CAD);
+
 		Order order = new Order(stock,marketparticipant,3);
 
 //		books.put(1L, );

@@ -1,6 +1,7 @@
 package com.georghs.vertx.pricing;
 
 
+import com.georghs.vertx.pricing.components.Currency;
 import com.georghs.vertx.pricing.components.Stock;
 
 import io.netty.handler.codec.http.HttpHeaderValues;
@@ -22,6 +23,7 @@ public class MainVerticle extends AbstractVerticle {
 	@Override
 	public void start(Promise<Void> startPromise) throws Exception {
 
+		Stock st = new Stock("sdfsd", "sdfsdf", Currency.AUD);
 
 	  Router books = Router.router(vertx);
 	  books.route().handler(BodyHandler.create());

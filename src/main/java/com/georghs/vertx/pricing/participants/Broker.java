@@ -3,7 +3,7 @@ package com.georghs.vertx.pricing.participants;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Broker extends MarketParticipant {
+public class Broker extends AbstractMarketParticipant {
 	private boolean commission_basis;
 	private HashMap<String, Double> customer_id_spread = new HashMap<String, Double>() {{
 		put("A1", 0.25);
