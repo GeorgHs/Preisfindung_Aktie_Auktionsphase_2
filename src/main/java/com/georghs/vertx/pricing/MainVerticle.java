@@ -1,6 +1,8 @@
 package com.georghs.vertx.pricing;
 
 
+import com.georghs.vertx.pricing.components.Stock;
+
 import io.netty.handler.codec.http.HttpHeaderValues;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.vertx.core.AbstractVerticle;

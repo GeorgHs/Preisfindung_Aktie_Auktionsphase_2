@@ -3,6 +3,9 @@ package com.georghs.vertx.pricing;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.georghs.vertx.pricing.components.Order;
+import com.georghs.vertx.pricing.components.Stock;
+
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 

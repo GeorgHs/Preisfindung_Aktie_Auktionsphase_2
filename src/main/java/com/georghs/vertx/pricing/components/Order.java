@@ -1,4 +1,4 @@
-package com.georghs.vertx.pricing;
+package com.georghs.vertx.pricing.components;
 
 import com.georghs.vertx.pricing.participants.MarketParticipant;
 

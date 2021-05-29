@@ -20,7 +20,7 @@ public class Broker extends MarketParticipant {
 	@param name
 	@param commission_basis the parameters used by the method
 	*/
-	public Broker(int id, String name, boolean commission_basis) {
+	public Broker(int id, String name, boolean commission_basis, HashMap<String, Double> customer_id_spread) {
 		super(id, name);
 		this.commission_basis = commission_basis;
 		if (isCommission_basis() == false) {
