@@ -1,6 +1,6 @@
 package com.georghs.vertx.pricing.components;
 
-import java.util.UUID;
+
 
 import com.georghs.vertx.pricing.customer.Customer;
 import com.georghs.vertx.pricing.participants.AbstractMarketParticipant;
@@ -9,7 +9,7 @@ import com.georghs.vertx.pricing.participants.AbstractMarketParticipant;
  * Eingehende Order die im Buch aufgenommen wird
  */
 public class Order {
-	private UUID id;
+	private int id;
 	private Stock stock;
 	private int volume_in_amount;
 	private int price;
@@ -17,9 +17,9 @@ public class Order {
 	private Customer customer;
 
 
-	public Order(Stock stock, int volume_in_amount, int price, OrderType ordertype, Customer customer) {
+	public Order(int id, Stock stock, int volume_in_amount, int price, OrderType ordertype, Customer customer) {
 		super();
-		this.id = UUID.randomUUID();
+		this.id = id;
 		this.stock = stock;
 		this.volume_in_amount = volume_in_amount;
 		this.price = price;
@@ -56,7 +56,7 @@ public class Order {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
 

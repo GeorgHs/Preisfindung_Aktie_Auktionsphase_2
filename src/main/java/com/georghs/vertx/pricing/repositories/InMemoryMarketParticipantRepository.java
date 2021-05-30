@@ -40,7 +40,7 @@ public class InMemoryMarketParticipantRepository implements MarketParticipantRep
 			.findFirst();
 
 		if (result.isEmpty()) {
-			throw new IllegalArgumentException("Id of MarketParticipant does not match or is null!");
+			throw new IllegalArgumentException("Id does not match or is null!");
 		}
 		return result.get();
 	}
