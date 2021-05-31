@@ -1,4 +1,4 @@
-package com.georghs.vertx.pricing.computations;
+package com.georghs.vertx.pricing.services;
 
 import java.util.ArrayList;
 
@@ -6,16 +6,15 @@ import com.georghs.vertx.pricing.components.ExecutedOrderItem;
 import com.georghs.vertx.pricing.components.ExecutionPrice;
 import com.georghs.vertx.pricing.components.Order;
 
-public class Auction extends IAuction {
+public class AuctionServiceImpl implements AuctionService {
 	private ArrayList<ExecutedOrderItem> executedOrderItems = new ArrayList<>();
 	private ArrayList<Order> allOrdersInPipe;
 	private ExecutionPrice the_price;
 
+// per Dependency Injection die Repositories mit reinziehen!!!
 
 
-
-
-	public Auction(ArrayList<ExecutedOrderItem> executedOrderItems, ArrayList<Order> allOrdersInPipe,
+	public AuctionServiceImpl(ArrayList<ExecutedOrderItem> executedOrderItems, ArrayList<Order> allOrdersInPipe,
 			ExecutionPrice the_price) {
 		super();
 		this.executedOrderItems = executedOrderItems;
@@ -47,7 +46,7 @@ public class Auction extends IAuction {
 		this.the_price = the_price;
 	}
 
-
+	//...
 
 
 }

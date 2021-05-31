@@ -66,6 +66,4 @@ public abstract class AbstractMarketParticipant {
 		this.orders = orders;
 	}
 
-
-
 }

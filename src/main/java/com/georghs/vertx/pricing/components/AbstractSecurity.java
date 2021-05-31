@@ -17,7 +17,6 @@ public abstract class AbstractSecurity {
 		this.name = name;
 		this.cur = cur;
 	}
-
 	/**
 	 * get ticker of this security
 	 * @return ticker as String
@@ -25,7 +24,6 @@ public abstract class AbstractSecurity {
 	public String getTicker() {
 		return ticker;
 	}
-
 	/**
 	 * set ticker of this security
 	 * @param ticker as String
@@ -33,7 +31,6 @@ public abstract class AbstractSecurity {
 	public void setTicker(String ticker) {
 		this.ticker = ticker;
 	}
-
 	/**
 	 * get name of this security
 	 * @return name as String
@@ -41,7 +38,6 @@ public abstract class AbstractSecurity {
 	public String getName() {
 		return name;
 	}
-
 	/**
 	 * set name of this security
 	 * @param name as String
@@ -49,7 +45,6 @@ public abstract class AbstractSecurity {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	/**
 	 * get currency of this security
 	 * @param cur as Currency
@@ -57,7 +52,6 @@ public abstract class AbstractSecurity {
 	public Currency getCur() {
 		return cur;
 	}
-
 	/**
 	 * set currency of this security
 	 * @param cur as Currency
